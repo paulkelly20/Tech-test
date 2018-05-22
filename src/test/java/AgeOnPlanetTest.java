@@ -11,6 +11,10 @@ public class AgeOnPlanetTest {
     public void earthAgeInSeconds() {
         assertEquals(31, AgeOnPlanet.getEarthAgeInYearsFromSeconds( 1000000000), 0);
     }
+    @Test
+    public void secondsFromYears() {
+        assertEquals(31557600, AgeOnPlanet.getSecondsFromYearsOnEarth(10), 0);
+    }
 
     @Test
     public void getAgeOnMercury(){

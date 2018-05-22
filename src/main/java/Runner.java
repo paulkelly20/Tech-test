@@ -29,7 +29,8 @@ public class Runner {
             System.out.println("What is your Age?");
             int ageSelection = scanner.nextInt();
             Planet planet = getPlanetEnumFromSelection(planetSelection);
-            System.out.println(String.format("You are %s years old on %s", AgeOnPlanet.getAgeOnPlanet(planet, ageSelection), planet));
+            String pickedPlanet = planet.toString().substring(0,1).toUpperCase() + planet.toString().substring(1).toLowerCase();
+            System.out.println(String.format("You are %s years old on %s", AgeOnPlanet.getAgeOnPlanet(planet, ageSelection), pickedPlanet));
         }
 
         if (selection == 2) {
