@@ -4,6 +4,13 @@ public class AgeOnPlanet {
     public static double getEarthAgeInYearsFromSeconds(int seconds){
         double result = (seconds / 31557600);
         return result;
+
+    }
+
+    public static double getSecondsFromYearsOnEarth(int age){
+        double result = age * 3155760;
+        return result;
+
     }
 
     public static double getAgeOnPlanet(Planet planet, int age) {
