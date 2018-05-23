@@ -1,3 +1,4 @@
+import java.math.BigInteger;
 import java.util.Scanner;
 
 public class Runner {
@@ -36,7 +37,7 @@ public class Runner {
         if (selection == 2) {
             System.out.println("How many seconds?");
             int secondsSelection = scanner.nextInt();
-            System.out.println(String.format("You are %s years old", AgeOnPlanet.getEarthAgeInYearsFromSeconds(secondsSelection)));
+            System.out.println(String.format("You are %d years old", (long)AgeOnPlanet.getEarthAgeInYearsFromSeconds(secondsSelection)));
         }
 
         if (selection == 3) {
@@ -44,6 +45,7 @@ public class Runner {
             int yearsSelection = scanner.nextInt();
             System.out.println(String.format("You are %d Seconds old", (long)AgeOnPlanet.getSecondsFromYearsOnEarth(yearsSelection)));
         }
+
     }
 
 
@@ -69,6 +71,7 @@ public class Runner {
 
         }
         return null;
+
     }
 
 }

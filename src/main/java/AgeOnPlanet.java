@@ -1,13 +1,15 @@
+import java.math.BigInteger;
+
 public class AgeOnPlanet {
 
 
     public static double getEarthAgeInYearsFromSeconds(int seconds){
         double result = (seconds / 31557600);
-        return Math.floor(result);
+        return result;
 
     }
 
-    public static double getSecondsFromYearsOnEarth(int age){
+    public static double getSecondsFromYearsOnEarth(long age){
         double result = age * 3155760;
         return result;
 
