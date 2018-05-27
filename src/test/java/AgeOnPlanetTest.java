@@ -1,6 +1,10 @@
 import org.junit.Before;
 import org.junit.Test;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.Month;
+
 import static org.junit.Assert.assertEquals;
 
 public class AgeOnPlanetTest {
@@ -54,6 +58,12 @@ public class AgeOnPlanetTest {
     @Test
     public void getAgeOnPluto() {
         assertEquals(0.040, AgeOnPlanet.getAgeOnPlanet(Planet.PLUTO, 10), 0.01);
+    }
+
+    @Test
+    public void dateWhen1BillionSecondsOlder(){
+        LocalDate birthday =   LocalDate.of(1983, Month.FEBRUARY, 8);
+        assertEquals(LocalDate.of(2014, Month.OCTOBER, 17), AgeOnPlanet.dateWhenOneBillionSecondsOlder(birthday));
     }
 }
 

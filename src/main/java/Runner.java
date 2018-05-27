@@ -1,4 +1,9 @@
 import java.math.BigInteger;
+import java.text.DateFormatSymbols;
+import java.time.LocalDate;
+import java.time.Month;
+import java.time.MonthDay;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class Runner {
@@ -7,7 +12,8 @@ public class Runner {
 
         System.out.println("Press 1 to Calculate Age On Other Planets" + System.lineSeparator() +
                 "Press 2 to Calculate Earth years from seconds"+ System.lineSeparator() +
-                "Press 3 to Calculate Seconds from Earth years");
+                "Press 3 to Calculate Seconds from Earth years" + System.lineSeparator() +
+                "Press 4 to Find out when your a Billion seconds old");
         Scanner scanner = new Scanner(System.in);
         int selection = scanner.nextInt();
 
@@ -46,7 +52,21 @@ public class Runner {
             System.out.println(String.format("You are %d Seconds old", (long)AgeOnPlanet.getSecondsFromYearsOnEarth(yearsSelection)));
         }
 
+        if (selection == 4) {
+            System.out.println("Enter date of birth in the format dd/mm/yyyy");
+            String dateLine = scanner.next();
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/M/yyyy");
+            LocalDate dateOfBirth = LocalDate.parse(dateLine, formatter);
+            DateTimeFormatter formatters = DateTimeFormatter.ofPattern("d/MM/uuuu");
+            LocalDate result = AgeOnPlanet.dateWhenOneBillionSecondsOlder(dateOfBirth);
+            String formattedResult = result.format(formatters);
+            System.out.println(String.format("The date will be %s when you are 1 Billion Seconds old", formattedResult ));
+        }
+
+
+
     }
+
 
 
 

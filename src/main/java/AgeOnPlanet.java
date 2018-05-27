@@ -1,4 +1,7 @@
-import java.math.BigInteger;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 
 public class AgeOnPlanet {
 
@@ -36,5 +39,11 @@ public class AgeOnPlanet {
 
         }
          return age;
+    }
+
+    public static LocalDate dateWhenOneBillionSecondsOlder(LocalDate birthdate){
+        long days = (((1000000000 / 60)/60) / 24);
+       return birthdate.plus(days, ChronoUnit.DAYS);
+
     }
 }
