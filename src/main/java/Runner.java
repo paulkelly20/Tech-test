@@ -13,7 +13,7 @@ public class Runner {
         System.out.println("Press 1 to Calculate Age On Other Planets" + System.lineSeparator() +
                 "Press 2 to Calculate Earth years from seconds"+ System.lineSeparator() +
                 "Press 3 to Calculate Seconds from Earth years" + System.lineSeparator() +
-                "Press 4 to Find out when your a Billion seconds old");
+                "Press 4 to Find out when you're a Billion seconds old");
         Scanner scanner = new Scanner(System.in);
         int selection = scanner.nextInt();
 
