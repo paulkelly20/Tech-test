@@ -1,8 +1,4 @@
-import java.math.BigInteger;
-import java.text.DateFormatSymbols;
 import java.time.LocalDate;
-import java.time.Month;
-import java.time.MonthDay;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
@@ -13,7 +9,7 @@ public class Runner {
         System.out.println("Press 1 to Calculate Age On Other Planets" + System.lineSeparator() +
                 "Press 2 to Calculate Earth years from seconds"+ System.lineSeparator() +
                 "Press 3 to Calculate Seconds from Earth years" + System.lineSeparator() +
-                "Press 4 to Find out when you're a Billion seconds old");
+                "Press 4 to Find out the date when you're a Billion seconds old");
         Scanner scanner = new Scanner(System.in);
         int selection = scanner.nextInt();
 
@@ -37,7 +33,7 @@ public class Runner {
             int ageSelection = scanner.nextInt();
             Planet planet = getPlanetEnumFromSelection(planetSelection);
             String pickedPlanet = planet.toString().substring(0,1).toUpperCase() + planet.toString().substring(1).toLowerCase();
-            System.out.println(String.format("You are %s years old on %s", AgeOnPlanet.getAgeOnPlanet(planet, ageSelection), pickedPlanet));
+            System.out.println(String.format("You are %s years old on %s", AgeOnPlanet.getAgeOnPlanetFromYears(planet, ageSelection), pickedPlanet));
         }
 
         if (selection == 2) {
@@ -60,12 +56,15 @@ public class Runner {
             DateTimeFormatter formatters = DateTimeFormatter.ofPattern("d/MM/uuuu");
             LocalDate result = AgeOnPlanet.dateWhenOneBillionSecondsOlder(dateOfBirth);
             String formattedResult = result.format(formatters);
-            System.out.println(String.format("The date will be %s when you are 1 Billion Seconds old", formattedResult ));
-        }
-
-
+            if(LocalDate.now().isBefore(result)){
+            System.out.println(String.format("The date will be %s when you are 1 Billion Seconds old", formattedResult ));}
+            else System.out.println(String.format("The date when you were 1 Billion Seconds old was %s", formattedResult ));}
 
     }
+
+
+
+
 
 
 

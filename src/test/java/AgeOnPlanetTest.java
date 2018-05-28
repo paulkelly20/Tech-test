@@ -1,8 +1,6 @@
-import org.junit.Before;
 import org.junit.Test;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.Month;
 
 import static org.junit.Assert.assertEquals;
@@ -22,42 +20,42 @@ public class AgeOnPlanetTest {
 
     @Test
     public void getAgeOnMercury(){
-        assertEquals(41.51, AgeOnPlanet.getAgeOnPlanet(Planet.MERCURY, 10), 0.1);
+        assertEquals(41.51, AgeOnPlanet.getAgeOnPlanetFromYears(Planet.MERCURY, 10), 0.1);
     }
 
     @Test
     public void getAgeOnVenus(){
-        assertEquals(16.26, AgeOnPlanet.getAgeOnPlanet(Planet.VENUS, 10), 0.1);
+        assertEquals(16.26, AgeOnPlanet.getAgeOnPlanetFromYears(Planet.VENUS, 10), 0.1);
     }
 
     @Test
     public void getAgeOnMars(){
-        assertEquals(5.32, AgeOnPlanet.getAgeOnPlanet(Planet.MARS, 10), 0.1);
+        assertEquals(5.32, AgeOnPlanet.getAgeOnPlanetFromYears(Planet.MARS, 10), 0.1);
     }
 
     @Test
     public void getAgeOnJupiter(){
-        assertEquals(0.84, AgeOnPlanet.getAgeOnPlanet(Planet.JUPITER, 10), 0.01);
+        assertEquals(0.84, AgeOnPlanet.getAgeOnPlanetFromYears(Planet.JUPITER, 10), 0.01);
     }
 
     @Test
     public void getAgeOnSaturn() {
-        assertEquals(0.34, AgeOnPlanet.getAgeOnPlanet(Planet.SATURN, 10), 0.01);
+        assertEquals(0.34, AgeOnPlanet.getAgeOnPlanetFromYears(Planet.SATURN, 10), 0.01);
     }
 
     @Test
     public void getAgeOnUranus() {
-        assertEquals(0.119, AgeOnPlanet.getAgeOnPlanet(Planet.URANUS, 10), 0.01);
+        assertEquals(0.119, AgeOnPlanet.getAgeOnPlanetFromYears(Planet.URANUS, 10), 0.01);
     }
 
     @Test
     public void getAgeOnNeptune() {
-        assertEquals(0.061, AgeOnPlanet.getAgeOnPlanet(Planet.NEPTUNE, 10), 0.01);
+        assertEquals(0.061, AgeOnPlanet.getAgeOnPlanetFromYears(Planet.NEPTUNE, 10), 0.01);
     }
 
     @Test
     public void getAgeOnPluto() {
-        assertEquals(0.040, AgeOnPlanet.getAgeOnPlanet(Planet.PLUTO, 10), 0.01);
+        assertEquals(0.040, AgeOnPlanet.getAgeOnPlanetFromYears(Planet.PLUTO, 10), 0.01);
     }
 
     @Test

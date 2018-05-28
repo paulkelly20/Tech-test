@@ -2,6 +2,7 @@
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
+import java.util.Map;
 
 public class AgeOnPlanet {
 
@@ -13,29 +14,28 @@ public class AgeOnPlanet {
     }
 
     public static double getSecondsFromYearsOnEarth(long age){
-        double result = age * 3155760;
-        return result;
+        return age * 3155760;
 
     }
 
-    public static double getAgeOnPlanet(Planet planet, int age) {
+    public static double getAgeOnPlanetFromYears(Planet planet, int age) {
         switch (planet) {
             case MERCURY:
-                return age / 0.2408467;
+                return age / Planet.MERCURY.getOrbitalPeriod();
             case VENUS:
-                return age / 0.61519726;
+                return age / Planet.VENUS.getOrbitalPeriod();
             case MARS:
-                return age / 1.8808158;
+                return age / Planet.MARS.getOrbitalPeriod();
             case JUPITER:
-                return age / 11.862615;
+                return age / Planet.JUPITER.getOrbitalPeriod();
             case SATURN:
-                return age / 29.447498;
+                return age / Planet.SATURN.getOrbitalPeriod();
             case URANUS:
-                return age / 84.016846;
+                return age / Planet.URANUS.getOrbitalPeriod();
             case NEPTUNE:
-                return age / 164.79132;
+                return age / Planet.NEPTUNE.getOrbitalPeriod();
             case PLUTO:
-                return age / 248.00;
+                return age / Planet.PLUTO.getOrbitalPeriod();
 
         }
          return age;
